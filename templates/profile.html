@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+
+{% if user.deleted %}
+<p style="color: red;">WARNING: This user has been deleted!</p>
+{% endif %}
+
+<p><strong>Your name:</strong>  {{ user.name }}</p>
+<p><strong>Your email:</strong>  {{ user.email }}</p>
+
+<p><a href="/profile/edit">Edit profile</a></p>
+<p><a href="/profile/delete">Delete profile</a></p>
+
+{% endblock content %}
